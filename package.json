@@ -1,0 +1,7 @@
+{
+  "name": "crawlang",
+  "version": "0.1.0",
+  "description": "A simple compiler from Crawlang to JS with puppeteer",
+  "main": "index.js",
+  "license": "MIT"
+}

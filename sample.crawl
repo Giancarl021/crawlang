@@ -1,0 +1,9 @@
+set headless, false
+
+start
+    goto 'localhost:5500'
+    type #username, 'Usuário de Testes'
+    type #password, 12345
+    click #btn-submit
+    screenshot
+end
