@@ -29,8 +29,6 @@ module.exports = function () {
                 throw new Error('Undefined function at line ' + (i + 1));
             }
 
-            console.log(rules, data.operator);
-
             const error = rules[data.operator](data.operands);
 
             if (error) {
