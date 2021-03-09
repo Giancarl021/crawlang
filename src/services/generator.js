@@ -9,7 +9,9 @@ module.exports = function(context) {
     }
 
     function suffix() {
-        return '})();';
+        return `    await page.close();
+    await browser.close();
+})();`;
     }
 
     function generate() {
