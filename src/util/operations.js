@@ -14,7 +14,7 @@ module.exports = function (context) {
     function goto(uri) {
         context.program.add({
             fn: 'goto',
-            args: [ uri ]
+            args: [ String(uri) ]
         });
     }
 
@@ -41,7 +41,7 @@ module.exports = function (context) {
     function screenshot(output) {
         context.program.add({
             fn: 'screenshot',
-            args: [ { path: output } ]
+            args: [ { path: String(output) } ]
         });
     }
 
