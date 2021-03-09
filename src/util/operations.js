@@ -58,6 +58,13 @@ module.exports = function (context) {
         context.program.add(instruction);
     }
 
+    function size(width, height) {
+        context.program.add({
+            fn: 'setViewport',
+            args: [ { width: Number(width), height: Number(height) } ]
+        });
+    }
+
     return {
         set,
         start,
@@ -65,6 +72,7 @@ module.exports = function (context) {
         type,
         click,
         wait,
+        size,
         screenshot,
         end
     }

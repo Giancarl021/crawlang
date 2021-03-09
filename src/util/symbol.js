@@ -2,6 +2,10 @@ module.exports = function (line) {
     const trimmed = line.trim();
     const operator = trimmed.replace(/\s.*$/, '');
 
+    if (trimmed.startsWith('#')) {
+        return { operator: 'comment', operands: [] };
+    }
+
     if (operator === trimmed) {
         return { operator, operands: [] };
     }

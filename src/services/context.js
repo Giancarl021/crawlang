@@ -19,6 +19,9 @@ module.exports = function () {
             if (!instruction) continue;
 
             const data = symbol(instruction);
+            
+            if (data.operator === 'comment') continue;
+
             const op = operations[data.operator];
             
             if (!op) {
