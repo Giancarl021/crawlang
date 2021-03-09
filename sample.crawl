@@ -5,5 +5,5 @@ start
     type #username, 'Usuário de Testes'
     type #password, 12345
     click #btn-submit
-    screenshot
+    screenshot 'out.png'
 end

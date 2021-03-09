@@ -25,7 +25,7 @@ module.exports = function (context) {
         };
 
         if (delay) {
-            instruction.args.push({ delay });
+            instruction.args.push({ delay: Number(delay) });
         }
 
         context.program.add(instruction)
