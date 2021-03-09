@@ -1,9 +1,8 @@
 set headless, false
 
 start
-    goto 'localhost:5500'
-    type #username, 'Usuário de Testes'
-    type #password, 12345
-    click #btn-submit
+    goto https://www.google.com
+    type input.gLFyf.gsfi, 'COVID-19\n'
+    wait navigation
     screenshot 'out.png'
 end

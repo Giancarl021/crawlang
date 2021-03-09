@@ -3,8 +3,8 @@ module.exports = function(context) {
     function prefix(options) {
         return `const puppeteer = require('puppeteer');
 (async () => {
-    const browser = await browser.launch(${JSON.stringify(options)});
-    const page = browser.newPage();
+    const browser = await puppeteer.launch(${JSON.stringify(options)});
+    const page = await browser.newPage();
 `;
     }
 
@@ -26,7 +26,7 @@ module.exports = function(context) {
     }
 
     function parseItem(item) {
-        return `    page.${item.fn}(${item.args.map(parseArg).join(', ')});
+        return `    await page.${item.fn}(${item.args.map(parseArg).join(', ')});
 `;
         function parseArg(arg) {
             let r;

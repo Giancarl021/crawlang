@@ -45,12 +45,26 @@ module.exports = function (context) {
         });
     }
 
+    function wait(timeout) {
+        const instruction = {};
+        if (timeout === 'navigation') {
+            instruction.fn = 'waitForNavigation';
+            instruction.args = [];
+        } else {
+            instruction.fn = 'waitForTimeout';
+            instruction.args = [ Number(timeout) || 0 ];
+        }
+
+        context.program.add(instruction);
+    }
+
     return {
         set,
         start,
         goto,
         type,
         click,
+        wait,
         screenshot,
         end
     }

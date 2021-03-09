@@ -9,7 +9,8 @@ module.exports = function (line) {
     const operands = trimmed
         .replace(operator + ' ', '')
         .split(/,(?=(?:(?:[^']*'){2})*[^']*$)/)
-        .map(e => e.trim().replace(/(^')|('$)/g, ''));
+        .map(e => e.trim().replace(/(^')|('$)/g, ''))
+        .map(e => e === 'true' ? true : (e === 'false' ? false : e));
 
     return { operator, operands };
 }
