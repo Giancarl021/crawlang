@@ -1,4 +1,5 @@
 set headless, false
+set defaultViewport, null
 
 start
     goto https://www.google.com

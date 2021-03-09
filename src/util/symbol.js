@@ -10,7 +10,8 @@ module.exports = function (line) {
         .replace(operator + ' ', '')
         .split(/,(?=(?:(?:[^']*'){2})*[^']*$)/)
         .map(e => e.trim().replace(/(^')|('$)/g, ''))
-        .map(e => e === 'true' ? true : (e === 'false' ? false : e));
+        .map(e => e === 'true' ? true : (e === 'false' ? false : e))
+        .map(e => e === 'null' ? null : (e === 'undefined' ? undefined : e));
 
     return { operator, operands };
 }
