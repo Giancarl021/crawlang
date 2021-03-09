@@ -16,6 +16,7 @@ module.exports = function () {
     }
 
     function getSequence() {
+        if (initialized) throw new Error('Program not ended');
         return sequence;
     }
 

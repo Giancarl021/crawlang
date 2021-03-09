@@ -2,6 +2,7 @@ const createVariables = require('../util/var');
 const symbol = require('../util/symbol');
 const createProgram = require('./program');
 const createOperations = require('../util/operations');
+const rules = require('../util/rules');
 
 module.exports = function () {
     const vars = createVariables();
@@ -26,6 +27,14 @@ module.exports = function () {
             
             if (!op) {
                 throw new Error('Undefined function at line ' + (i + 1));
+            }
+
+            console.log(rules, data.operator);
+
+            const error = rules[data.operator](data.operands);
+
+            if (error) {
+                throw new Error(error + ' at function ' + data.operator + ' at line ' + (i + 1));
             }
 
             operations[data.operator](...data.operands);
