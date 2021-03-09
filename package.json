@@ -3,5 +3,9 @@
   "version": "0.1.0",
   "description": "A simple compiler from Crawlang to JS with puppeteer",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^8.0.0",
+    "yargs": "^16.2.0"
+  }
 }

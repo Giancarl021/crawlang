@@ -21,7 +21,7 @@ module.exports = function (context) {
     function type(selector, text, delay = null) {
         const instruction = {
             fn: 'type',
-            args: [ selector, text ]
+            args: [ selector, String(text) ]
         };
 
         if (delay) {
